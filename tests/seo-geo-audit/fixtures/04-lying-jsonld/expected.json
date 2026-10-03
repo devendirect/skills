@@ -1,0 +1,17 @@
+{
+  "checks": [
+    {
+      "script": "check-live",
+      "path": "/grinder/",
+      "args": ["--no-site"],
+      "jsonMust": ["\"Product\"", "\"AggregateRating\"", "\"FAQPage\"", "\"price\": \"99.00\""],
+      "mustNotFind": ["Invalid JSON-LD", "No JSON-LD"]
+    },
+    {
+      "script": "check-live",
+      "path": "/",
+      "mustNotFind": ["Invalid JSON-LD", "soft 404", "Sitemap"]
+    },
+    { "script": "robots-check", "path": "/", "maxFindings": 0 }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "checks": [
+    {
+      "script": "check-live",
+      "path": "/grinder/",
+      "args": ["--no-site"],
+      "mustFind": ["Meta robots contains noindex"],
+      "jsonMust": ["\"price\": \"149.00\"", "\"FAQPage\""]
+    },
+    {
+      "script": "check-live",
+      "path": "/",
+      "jsonMust": ["\"Organization\""],
+      "mustNotFind": ["noindex", "Invalid JSON-LD"]
+    }
+  ]
+}

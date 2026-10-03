@@ -1,0 +1,8 @@
+{
+  "checks": [
+    { "script": "check-live", "path": "/", "maxFindings": 0 },
+    { "script": "check-live", "path": "/about/", "args": ["--no-site"], "mustFind": ["No JSON-LD"], "maxFindings": 1 },
+    { "script": "check-live", "path": "/posts/first-light/", "args": ["--no-site"], "maxFindings": 0 },
+    { "script": "robots-check", "path": "/", "maxFindings": 0 }
+  ]
+}

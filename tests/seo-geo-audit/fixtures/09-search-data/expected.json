@@ -1,0 +1,16 @@
+{
+  "checks": [
+    {
+      "script": "search-data",
+      "argsBefore": ["csv"],
+      "file": "Queries.csv",
+      "jsonMust": ["\"count\": 5", "\"clicks\": 57", "\"impressions\": 2045", "\"nearTop\": \\[\\s*\\{\\s*\"key\": \"best time to see avocets\"", "\"noClicks\": \\[\\s*\\{\\s*\"key\": \"brent geese loire\""]
+    },
+    {
+      "script": "search-data",
+      "argsBefore": ["csv"],
+      "file": "Requetes-fr.csv",
+      "jsonMust": ["\"count\": 3", "\"ctr\": 0\\.0771", "\"position\": 2\\.9", "\"key\": \"stage poterie week-end nantes\""]
+    }
+  ]
+}

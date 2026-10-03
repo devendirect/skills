@@ -1,0 +1,5 @@
+{
+  "port": 8702,
+  "root": "dist",
+  "spaFallback": true
+}

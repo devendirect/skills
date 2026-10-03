@@ -1,0 +1,16 @@
+{
+  "checks": [
+    {
+      "script": "check-live",
+      "path": "/",
+      "mustFind": ["empty app root", "No meta description", "No canonical", "No JSON-LD", "soft 404", "is not a sitemap", "llms.txt answers 200 but as HTML", "No lang attribute"]
+    },
+    {
+      "script": "check-live",
+      "path": "/spots/hossegor",
+      "args": ["--no-site"],
+      "mustFind": ["empty app root"]
+    },
+    { "script": "robots-check", "path": "/", "maxFindings": 0 }
+  ]
+}

@@ -1,0 +1,32 @@
+name: checks
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 6 1 * *"   # monthly, 1st of the month, 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  scripts:
+    # The skill's scripts against the test fixtures (no network beyond localhost).
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tests/seo-geo-audit/run-script-tests.mjs
+      - run: node tests/seo-geo-audit/test-apis.mjs
+
+  sources:
+    # Are the official sources still where the skill says, and are the facts recent?
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tests/seo-geo-audit/check-sources.mjs

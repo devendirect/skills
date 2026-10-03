@@ -1,0 +1,16 @@
+{
+  "checks": [
+    {
+      "script": "log-bots",
+      "file": "logs/access.log",
+      "mustFind": ["GPTBot: 3 of 5 requests got a 4xx/5xx"],
+      "maxFindings": 1,
+      "jsonMust": ["\"token\": \"Googlebot\",[^}]*\"hits\": 6", "\"domain\": \"chatgpt.com\",\\s*\"visits\": 1", "\"robotsOnly\": true", "\"parsed\": 17"]
+    },
+    {
+      "script": "log-bots",
+      "file": "logs/access.log.1.gz",
+      "jsonMust": ["\"token\": \"OAI-SearchBot\",[^}]*\"hits\": 1"]
+    }
+  ]
+}

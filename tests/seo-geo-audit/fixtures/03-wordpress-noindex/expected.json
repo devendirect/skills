@@ -1,0 +1,18 @@
+{
+  "checks": [
+    {
+      "script": "check-live",
+      "path": "/",
+      "mustFind": ["Meta robots contains noindex", "No meta description", "No canonical", "No JSON-LD", "No og:image", "No Sitemap line in robots.txt", "Sitemap .*wp-sitemap.xml answered 404|Sitemap .*sitemap.xml answered 404"],
+      "mustNotFind": ["soft 404", "empty app root"]
+    },
+    {
+      "script": "check-live",
+      "path": "/cours/",
+      "args": ["--no-site"],
+      "mustFind": ["Meta robots contains noindex"],
+      "mustNotFind": ["No canonical"]
+    },
+    { "script": "robots-check", "path": "/", "maxFindings": 0 }
+  ]
+}

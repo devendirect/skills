@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+  <title>Fieldnotes</title>
+  <link>http://localhost:8701/</link>
+  <description>Birdwatching notes from the Loire estuary.</description>
+  <item>
+    <title>First light at Paimbœuf</title>
+    <link>http://localhost:8701/posts/first-light/</link>
+    <pubDate>Mon, 28 Sep 2026 07:00:00 +0200</pubDate>
+  </item>
+</channel></rss>

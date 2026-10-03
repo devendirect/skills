@@ -1,0 +1,18 @@
+{
+  "checks": [
+    {
+      "script": "check-live",
+      "path": "/",
+      "jsonMust": ["\"status\": 302", "\"finalUrl\": \"http://localhost:8706/fr/\"", "\"hreflang\": \\[\\]"],
+      "mustFind": ["Temporary redirect \\(302\\)"],
+      "mustNotFind": ["soft 404", "Sitemap", "Redirect chain"]
+    },
+    {
+      "script": "check-live",
+      "path": "/en/",
+      "args": ["--no-site"],
+      "jsonMust": ["\"lang\": \"fr\"", "\"hreflang\": \\[\\]"]
+    },
+    { "script": "robots-check", "path": "/", "maxFindings": 0 }
+  ]
+}

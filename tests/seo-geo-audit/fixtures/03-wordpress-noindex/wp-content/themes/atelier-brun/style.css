@@ -1,0 +1,9 @@
+/*
+Theme Name: Atelier Brun
+Author: Claire Brun
+Version: 1.2
+Text Domain: atelier-brun
+*/
+
+body { font-family: Georgia, serif; color: #3b2f2a; background: #f7f1ea; margin: 0; }
+main { max-width: 42rem; margin: 2rem auto; padding: 0 1rem; }
