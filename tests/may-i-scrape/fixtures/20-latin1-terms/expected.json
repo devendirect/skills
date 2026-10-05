@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "path": "/",
+      "options": {
+        "purpose": "bulk"
+      },
+      "clauses": 1,
+      "signals": {
+        "terms.read": true,
+        "terms.clauses.0.heading": "Article 7 - Réutilisation"
+      }
+    },
+    {
+      "path": "/",
+      "options": {
+        "purpose": "bulk",
+        "classifyAll": "prohibited"
+      },
+      "verdicts": {
+        "bulk": "red"
+      },
+      "reasons": {
+        "bulk": [
+          "R4"
+        ]
+      }
+    }
+  ]
+}

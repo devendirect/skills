@@ -1,0 +1,43 @@
+{
+  "checked": "2026-10-03",
+  "note": "Keep in sync with references/ai-crawlers.md.",
+  "families": {
+    "search": "Search / citation: blocking it removes the site from that assistant's answers",
+    "user": "User-triggered fetch: the assistant cannot open the page on request",
+    "training": "Training: no effect on search visibility unless noted",
+    "mixed": "Search and training under one token",
+    "other": "Other"
+  },
+  "agents": [
+    { "token": "Googlebot", "operator": "Google", "family": "search", "robots": "yes", "note": "Also feeds AI Overviews and AI Mode" },
+    { "token": "Google-Extended", "operator": "Google", "family": "training", "robots": "yes", "robotsOnly": true, "note": "Also controls Gemini grounding: blocking it removes the site from Gemini answers built from the Search index" },
+    { "token": "Bingbot", "operator": "Microsoft", "family": "search", "robots": "yes", "note": "Copilot and ChatGPT search draw on Bing" },
+    { "token": "OAI-SearchBot", "operator": "OpenAI", "family": "search", "robots": "yes" },
+    { "token": "ChatGPT-User", "operator": "OpenAI", "family": "user", "robots": "may not apply" },
+    { "token": "GPTBot", "operator": "OpenAI", "family": "training", "robots": "yes" },
+    { "token": "OAI-AdsBot", "operator": "OpenAI", "family": "other", "robots": "yes", "note": "Checks ad landing pages" },
+    { "token": "Claude-SearchBot", "operator": "Anthropic", "family": "search", "robots": "yes" },
+    { "token": "Claude-User", "operator": "Anthropic", "family": "user", "robots": "yes" },
+    { "token": "ClaudeBot", "operator": "Anthropic", "family": "training", "robots": "yes" },
+    { "token": "PerplexityBot", "operator": "Perplexity", "family": "search", "robots": "yes" },
+    { "token": "Perplexity-User", "operator": "Perplexity", "family": "user", "robots": "generally no" },
+    { "token": "Applebot", "operator": "Apple", "family": "mixed", "robots": "yes", "note": "Siri, Spotlight, Safari" },
+    { "token": "Applebot-Extended", "operator": "Apple", "family": "training", "robots": "yes", "robotsOnly": true, "note": "Opt-out token; blocking it keeps Siri / Spotlight / Safari" },
+    { "token": "meta-webindexer", "operator": "Meta", "family": "search", "robots": "yes", "note": "Meta AI search" },
+    { "token": "meta-externalagent", "operator": "Meta", "family": "training", "robots": "yes" },
+    { "token": "meta-externalfetcher", "operator": "Meta", "family": "user", "robots": "may bypass" },
+    { "token": "facebookexternalhit", "operator": "Meta", "family": "other", "robots": "may bypass", "note": "Link previews" },
+    { "token": "Amzn-SearchBot", "operator": "Amazon", "family": "search", "robots": "yes", "note": "Alexa; not used for training" },
+    { "token": "Amzn-User", "operator": "Amazon", "family": "user", "robots": "may not" },
+    { "token": "Amazonbot", "operator": "Amazon", "family": "mixed", "robots": "yes", "note": "Products and training" },
+    { "token": "MistralAI-Index", "operator": "Mistral", "family": "search", "robots": "yes" },
+    { "token": "MistralAI-User", "operator": "Mistral", "family": "user", "robots": "yes" },
+    { "token": "MistralAI-Training", "operator": "Mistral", "family": "training", "robots": "yes" },
+    { "token": "DuckAssistBot", "operator": "DuckDuckGo", "family": "search", "robots": "yes", "note": "Not used for training" },
+    { "token": "CCBot", "operator": "Common Crawl", "family": "training", "robots": "yes", "note": "Public dataset reused by many models" }
+  ],
+  "deprecated": [
+    { "token": "Claude-Web", "operator": "Anthropic", "replacedBy": "Claude-User / ClaudeBot" },
+    { "token": "anthropic-ai", "operator": "Anthropic", "replacedBy": "ClaudeBot" }
+  ]
+}

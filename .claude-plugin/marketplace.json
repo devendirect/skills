@@ -14,6 +14,15 @@
       },
       "source": "./plugins/seo-geo-audit",
       "category": "development"
+    },
+    {
+      "name": "may-i-scrape",
+      "description": "Checks whether a website's data may be collected lawfully and politely for a given purpose, and gives a green / orange / red verdict with the signals behind it. Never helps bypass a protection. Not legal advice.",
+      "author": {
+        "name": "DevEnDirect"
+      },
+      "source": "./plugins/may-i-scrape",
+      "category": "development"
     }
   ]
 }

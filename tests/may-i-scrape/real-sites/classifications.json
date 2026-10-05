@@ -1,0 +1,157 @@
+{
+  "_note": "Clause labels given on 2026-10-04 by the model (Claude, in this session), as the skill asks: for the purpose tested on each site, stricter label when in doubt. A label string applies to that site's purpose. Judgement calls are listed in _calls. Relabelled on the same day after the definitions of decision-table.md were made explicit (\"forbidden without permission\" is prohibited; generic copyright notices are unrelated for lookup and monitor).",
+  "_calls": {
+    "fr-insee cf99efa0c": "allowed: automated extraction is explicitly 'autorisée', on condition of not harming the site; that condition is met by polite scraping, it is not a permission the user lacks",
+    "fr-insee c04124abd": "unrelated: respecting robots.txt and limiting the rate are good practices the user can follow, not a permission to obtain",
+    "uk-gov c6f664072": "allowed for republish: 'You can reproduce content published on GOV.UK under the OGL as long as you follow the licence's conditions'",
+    "lemonde-lookup c5a744e10": "unrelated for a one-off lookup: the clause forbids crawling and massive collection",
+    "lemonde-lookup c9cd1d032": "unrelated (rules made explicit on 2026-10-04): a generic copyright notice ('toute reproduction … sans l'autorisation') concerns republication, not a one-off lookup; it was conditional in the first labelling",
+    "amazon c24b87f2e / ce514d620": "conditional for monitor: forbidden 'pour des raisons commerciales' without authorisation; the purpose may or may not be commercial",
+    "open-meteo c16df58f1": "conditional: the free API is for non-commercial use only",
+    "societe c420e9c27": "prohibited for bulk: data may not be reproduced 'autrement que pour son usage personnel'",
+    "wttj cd1d47d41": "prohibited for monitor: no copying or downloading of any part of the platform",
+    "github c2356e694": "conditional: information may be used 'for the following reasons' only (research, archiving…), which the user must check",
+    "github c849903f4": "unrelated: forbids excessive automated bulk activity; a polite monitor of one page is not that"
+  },
+  "fr-service-public": {
+    "cbcd317b1": "unrelated"
+  },
+  "fr-data-gouv-ban": {
+    "ce309be13": "unrelated",
+    "cfd900d88": "unrelated",
+    "c0cb432a6": "unrelated",
+    "c54596ee7": "unrelated",
+    "c4edb5447": "unrelated",
+    "c32f157e7": "unrelated",
+    "c3f035669": "unrelated",
+    "c5b8aaa56": "unrelated",
+    "c359fd4cf": "unrelated",
+    "cba95204c": "unrelated",
+    "cbe2fd14f": "unrelated",
+    "c16c39736": "unrelated"
+  },
+  "fr-impots": {
+    "c9324e76a": "unrelated"
+  },
+  "fr-insee": {
+    "cf99efa0c": "allowed",
+    "c56257da9": "unrelated",
+    "c04124abd": "unrelated",
+    "c338f620b": "unrelated",
+    "c07e730ea": "unrelated",
+    "c9084065d": "allowed",
+    "c7512594e": "unrelated"
+  },
+  "fr-cnil": {
+    "cda47cfd5": "unrelated",
+    "c0de4fbf8": "unrelated",
+    "cc9f16d99": "unrelated",
+    "c8f22ca48": "unrelated"
+  },
+  "eu-commission": {
+    "cbbddc1ae": "unrelated",
+    "c0879262a": "unrelated",
+    "c59d088f8": "unrelated",
+    "c66bc6706": "unrelated"
+  },
+  "uk-gov": {
+    "c04da3530": "unrelated",
+    "c6f664072": "allowed",
+    "cd57698b2": "unrelated",
+    "c36184b65": "unrelated"
+  },
+  "open-meteo": {
+    "c16df58f1": "conditional",
+    "c19895d1e": "unrelated",
+    "c6229fb86": "unrelated"
+  },
+  "github": {
+    "cfc14c1bd": "unrelated",
+    "ccbaef0d7": "unrelated",
+    "cf82c6809": "unrelated",
+    "c98b3448d": "unrelated",
+    "c208d8f53": "unrelated",
+    "c8bad76ef": "unrelated",
+    "cf32901e8": "unrelated",
+    "c3cff90cf": "unrelated",
+    "c1e315395": "unrelated",
+    "c849903f4": "unrelated",
+    "c2356e694": "conditional",
+    "ceb9c2c5b": "unrelated",
+    "c845ce7a4": "unrelated",
+    "c9a2777bb": "unrelated",
+    "cd600174b": "unrelated"
+  },
+  "amazon": {
+    "ce9b35576": "prohibited",
+    "cd1000fee": "prohibited",
+    "c4e056b2f": "prohibited",
+    "c9919e79a": "unrelated",
+    "c7a58b518": "unrelated",
+    "cde4fd95b": "unrelated",
+    "c24b87f2e": "conditional",
+    "ce514d620": "conditional",
+    "cf99227bc": "unrelated",
+    "c291cdd96": "unrelated",
+    "c9ab00765": "unrelated"
+  },
+  "bbc": {
+    "c6e8aa1d5": "prohibited",
+    "ce4220ef2": "prohibited",
+    "c1172383c": "prohibited",
+    "c2c77c4ea": "unrelated",
+    "c9cbf83e6": "unrelated"
+  },
+  "guardian": {
+    "cc26570c9": "prohibited",
+    "c4aab976f": "prohibited",
+    "ca1b6a259": "unrelated",
+    "c72e3f3b6": "unrelated",
+    "cbe3cc90d": "unrelated",
+    "c147d4464": "unrelated",
+    "cba2c17ef": "unrelated",
+    "c577843dd": "prohibited",
+    "c2c9d7d05": "unrelated",
+    "c49fc5a7b": "prohibited"
+  },
+  "hn": {
+    "c9286c6d1": "prohibited",
+    "c373b4b97": "unrelated",
+    "c46038d75": "unrelated",
+    "cf33290ea": "conditional"
+  },
+  "lemonde-ai": {
+    "c5a744e10": "prohibited",
+    "c3d91ec09": "unrelated",
+    "c7d1c1d19": "unrelated",
+    "c9cd1d032": "prohibited",
+    "cbc690ac1": "unrelated",
+    "c819f5707": "unrelated"
+  },
+  "lemonde-lookup": {
+    "c5a744e10": "unrelated",
+    "c3d91ec09": "unrelated",
+    "c7d1c1d19": "unrelated",
+    "c9cd1d032": "unrelated",
+    "cbc690ac1": "unrelated",
+    "c819f5707": "unrelated"
+  },
+  "societe": {
+    "c56cefb78": "prohibited",
+    "cf9faeb92": "prohibited",
+    "c420e9c27": "prohibited"
+  },
+  "wttj": {
+    "c562e3a67": "prohibited",
+    "c144e7628": "unrelated",
+    "cbbeaccd1": "unrelated",
+    "c1611f20a": "unrelated",
+    "c24fd87c7": "unrelated",
+    "c35f400e6": "unrelated",
+    "c11878892": "unrelated",
+    "cd1d47d41": "prohibited",
+    "c8f2f287a": "unrelated",
+    "c288ade9e": "unrelated",
+    "c8ff4f413": "unrelated"
+  }
+}

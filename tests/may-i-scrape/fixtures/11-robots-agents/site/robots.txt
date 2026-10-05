@@ -1,0 +1,5 @@
+User-agent: may-i-scrape
+Disallow: /
+
+User-agent: mybot
+Disallow: /catalogue/

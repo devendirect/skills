@@ -1,0 +1,34 @@
+{
+  "checks": [
+    {
+      "path": "/",
+      "clauses": 2,
+      "signals": {
+        "terms.read": true
+      }
+    },
+    {
+      "path": "/",
+      "options": {
+        "classifyAll": {
+          "monitor": "allowed",
+          "republish": "prohibited"
+        }
+      },
+      "verdicts": {
+        "monitor": "green",
+        "republish": "red"
+      },
+      "positives": {
+        "monitor": [
+          "G5"
+        ]
+      },
+      "reasons": {
+        "republish": [
+          "R4"
+        ]
+      }
+    }
+  ]
+}

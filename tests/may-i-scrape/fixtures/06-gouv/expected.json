@@ -1,0 +1,59 @@
+{
+  "checks": [
+    {
+      "path": "/",
+      "verdicts": {
+        "republish": "orange"
+      },
+      "positives": {
+        "republish": [
+          "G2"
+        ],
+        "bulk": [
+          "G2"
+        ]
+      },
+      "covered": {
+        "republish": [
+          "O5"
+        ],
+        "bulk": [
+          "O4"
+        ]
+      },
+      "notReasons": {
+        "republish": [
+          "O5",
+          "O7"
+        ]
+      },
+      "signals": {
+        "public_body.public": true,
+        "public_body.rule": "gouv.fr"
+      }
+    },
+    {
+      "path": "/annuaire.html",
+      "verdicts": {
+        "lookup": "orange",
+        "republish": "orange"
+      },
+      "reasons": {
+        "lookup": [
+          "O1"
+        ],
+        "republish": [
+          "O1"
+        ]
+      },
+      "positives": {
+        "republish": [
+          "G2"
+        ]
+      },
+      "signals": {
+        "personal_data.level": "likely"
+      }
+    }
+  ]
+}

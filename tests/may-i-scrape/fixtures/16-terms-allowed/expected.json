@@ -1,0 +1,56 @@
+{
+  "checks": [
+    {
+      "path": "/",
+      "options": {
+        "classifyAll": "allowed"
+      },
+      "clauses": 1,
+      "verdicts": {
+        "lookup": "green",
+        "bulk": "green",
+        "republish": "green",
+        "monitor": "green",
+        "ai-tdm": "green"
+      },
+      "positives": {
+        "bulk": [
+          "G5"
+        ],
+        "republish": [
+          "G5"
+        ]
+      },
+      "covered": {
+        "bulk": [
+          "O4"
+        ],
+        "republish": [
+          "O5"
+        ]
+      }
+    },
+    {
+      "path": "/",
+      "options": {
+        "classifyAll": {
+          "bulk": "allowed",
+          "ai-tdm": "unrelated"
+        }
+      },
+      "verdicts": {
+        "bulk": "green",
+        "ai-tdm": "orange",
+        "lookup": "orange"
+      },
+      "reasons": {
+        "ai-tdm": [
+          "O7"
+        ],
+        "lookup": [
+          "O6"
+        ]
+      }
+    }
+  ]
+}

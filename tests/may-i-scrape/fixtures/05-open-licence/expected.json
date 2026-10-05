@@ -1,0 +1,64 @@
+{
+  "checks": [
+    {
+      "path": "/",
+      "verdicts": {
+        "bulk": "orange",
+        "republish": "orange"
+      },
+      "positives": {
+        "bulk": [
+          "G1"
+        ],
+        "republish": [
+          "G1"
+        ]
+      },
+      "covered": {
+        "bulk": [
+          "O4"
+        ],
+        "republish": [
+          "O5"
+        ]
+      },
+      "notReasons": {
+        "bulk": [
+          "O4",
+          "O7"
+        ],
+        "republish": [
+          "O5",
+          "O7"
+        ]
+      },
+      "reasons": {
+        "bulk": [
+          "O6"
+        ]
+      },
+      "signals": {
+        "licence.data.0.id": "Licence-Ouverte",
+        "licence.site.0.id": "CC-BY-NC-4.0"
+      }
+    },
+    {
+      "path": "/nc.html",
+      "positives": {
+        "bulk": [
+          "G1"
+        ]
+      },
+      "reasons": {
+        "republish": [
+          "O5",
+          "O7"
+        ]
+      },
+      "signals": {
+        "licence.data.0.id": "CC-BY-NC-4.0",
+        "licence.data.0.nc": true
+      }
+    }
+  ]
+}

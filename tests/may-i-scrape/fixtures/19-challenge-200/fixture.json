@@ -1,0 +1,11 @@
+{
+  "host": "https://challenge200.example",
+  "root": "site",
+  "routes": {
+    "/imperva.html": {
+      "headers": {
+        "x-iinfo": "50-123-0 0NNN"
+      }
+    }
+  }
+}

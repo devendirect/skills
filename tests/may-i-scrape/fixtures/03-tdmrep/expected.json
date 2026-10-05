@@ -1,0 +1,47 @@
+{
+  "checks": [
+    {
+      "path": "/articles/a.html",
+      "verdicts": {
+        "ai-tdm": "red",
+        "lookup": "orange"
+      },
+      "reasons": {
+        "ai-tdm": [
+          "R2"
+        ],
+        "bulk": [
+          "O3"
+        ]
+      },
+      "signals": {
+        "tdm.reserved": true,
+        "tdm.source": "file",
+        "tdm.policy": "https://press.example/tdm-policy.json"
+      },
+      "notReasons": {
+        "lookup": [
+          "O3"
+        ]
+      }
+    },
+    {
+      "path": "/articles/free/b.html",
+      "verdicts": {
+        "ai-tdm": "orange"
+      },
+      "notReasons": {
+        "ai-tdm": [
+          "R2"
+        ],
+        "bulk": [
+          "O3"
+        ]
+      },
+      "signals": {
+        "tdm.reserved": false,
+        "tdm.source": "file"
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "root": "site",
+  "host": "https://media.example",
+  "routes": {
+    "/free.html": {
+      "headers": {
+        "tdm-reservation": "0"
+      }
+    },
+    "/meta.html": {
+      "headers": {
+        "tdm-reservation": "0"
+      }
+    },
+    "/bad.html": {
+      "headers": {
+        "tdm-reservation": "yes"
+      }
+    }
+  }
+}

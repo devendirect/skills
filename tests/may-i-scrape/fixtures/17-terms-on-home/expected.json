@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "path": "/article/42.html",
+      "options": {
+        "purpose": "ai-tdm",
+        "classifyAll": "prohibited"
+      },
+      "clauses": 1,
+      "verdicts": {
+        "ai-tdm": "red"
+      },
+      "reasons": {
+        "ai-tdm": [
+          "R4"
+        ]
+      },
+      "signals": {
+        "terms.source": "home page",
+        "terms.pages.0.url": "https://media-news.example/legal/terms-of-service"
+      }
+    }
+  ]
+}

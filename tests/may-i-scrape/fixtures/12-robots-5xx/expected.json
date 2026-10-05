@@ -1,0 +1,26 @@
+{
+  "checks": [
+    {
+      "path": "/page.html",
+      "verdicts": {
+        "lookup": "red",
+        "monitor": "red",
+        "bulk": "red",
+        "ai-tdm": "red",
+        "republish": "red"
+      },
+      "reasons": {
+        "lookup": [
+          "R1"
+        ]
+      },
+      "signals": {
+        "robots.state": "unreachable"
+      },
+      "notRequested": [
+        "/page.html",
+        "/.well-known/"
+      ]
+    }
+  ]
+}

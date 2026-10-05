@@ -1,0 +1,9 @@
+{
+  "root": "site",
+  "host": "https://down.example",
+  "routes": {
+    "/robots.txt": {
+      "status": 503
+    }
+  }
+}

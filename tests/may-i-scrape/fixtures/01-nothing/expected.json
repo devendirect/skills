@@ -1,0 +1,62 @@
+{
+  "checks": [
+    {
+      "path": "/",
+      "verdicts": {
+        "lookup": "orange",
+        "monitor": "orange",
+        "bulk": "orange",
+        "ai-tdm": "orange",
+        "republish": "orange"
+      },
+      "reasons": {
+        "lookup": [
+          "O6",
+          "O7"
+        ],
+        "bulk": [
+          "O4"
+        ],
+        "republish": [
+          "O5"
+        ]
+      },
+      "notReasons": {
+        "lookup": [
+          "R1",
+          "O1",
+          "O2",
+          "O3",
+          "O4",
+          "O8"
+        ],
+        "ai-tdm": [
+          "R2",
+          "R3"
+        ]
+      },
+      "signals": {
+        "robots.path_allowed": true,
+        "tdm.reserved": null,
+        "public_body.public": false,
+        "personal_data.level": "not detected",
+        "page.js_required": false
+      }
+    },
+    {
+      "path": "/",
+      "options": {
+        "purpose": "lookup",
+        "volume": "5000/day"
+      },
+      "verdicts": {
+        "lookup": "orange"
+      },
+      "reasons": {
+        "lookup": [
+          "O4"
+        ]
+      }
+    }
+  ]
+}

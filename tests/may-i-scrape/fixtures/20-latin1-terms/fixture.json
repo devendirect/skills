@@ -1,0 +1,11 @@
+{
+  "host": "https://latin.example",
+  "root": "site",
+  "routes": {
+    "/cgu.html": {
+      "headers": {
+        "content-type": "text/html; charset=iso-8859-1"
+      }
+    }
+  }
+}

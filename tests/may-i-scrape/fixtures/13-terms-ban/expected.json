@@ -1,0 +1,46 @@
+{
+  "checks": [
+    {
+      "path": "/",
+      "options": {
+        "purpose": "lookup"
+      },
+      "clauses": 1,
+      "verdicts": {
+        "lookup": "orange"
+      },
+      "reasons": {
+        "lookup": [
+          "O6"
+        ]
+      },
+      "signals": {
+        "terms.found": true,
+        "terms.read": true,
+        "terms.source": "page",
+        "terms.pages.0.url": "https://catalogue.example/cgu.html",
+        "terms.clauses.0.heading": "Article 4 – Propriété du contenu"
+      }
+    },
+    {
+      "path": "/",
+      "options": {
+        "purpose": "lookup",
+        "classifyAll": "prohibited"
+      },
+      "verdicts": {
+        "lookup": "red"
+      },
+      "reasons": {
+        "lookup": [
+          "R4"
+        ]
+      },
+      "notReasons": {
+        "lookup": [
+          "O6"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "checks": [
+    {
+      "path": "/data/open/list.html",
+      "options": {
+        "purpose": "lookup"
+      },
+      "verdicts": {
+        "lookup": "orange"
+      },
+      "notReasons": {
+        "lookup": [
+          "R1"
+        ]
+      },
+      "signals": {
+        "robots.path_allowed": true,
+        "robots.crawl_delay": 5,
+        "robots.sitemaps": [
+          "https://wild.example/sitemap.xml"
+        ]
+      }
+    },
+    {
+      "path": "/data/secret.html",
+      "options": {
+        "purpose": "lookup"
+      },
+      "verdicts": {
+        "lookup": "red"
+      },
+      "reasons": {
+        "lookup": [
+          "R1"
+        ]
+      },
+      "notRequested": [
+        "/data/secret.html"
+      ]
+    },
+    {
+      "path": "/shop/item.php",
+      "options": {
+        "purpose": "monitor"
+      },
+      "verdicts": {
+        "monitor": "red"
+      },
+      "reasons": {
+        "monitor": [
+          "R1"
+        ]
+      }
+    },
+    {
+      "path": "/public/a.php",
+      "options": {
+        "purpose": "lookup"
+      },
+      "notReasons": {
+        "lookup": [
+          "R1"
+        ]
+      },
+      "signals": {
+        "robots.path_allowed": true,
+        "robots.by": "Allow: /public/*.php$"
+      }
+    },
+    {
+      "path": "/shop/item.php?ref=1",
+      "options": {
+        "purpose": "lookup"
+      },
+      "notReasons": {
+        "lookup": [
+          "R1"
+        ]
+      },
+      "signals": {
+        "robots.path_allowed": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "checks": [
+    {
+      "path": "/",
+      "options": {
+        "purpose": "bulk",
+        "classifyAll": "conditional"
+      },
+      "clauses": 1,
+      "verdicts": {
+        "bulk": "orange"
+      },
+      "reasons": {
+        "bulk": [
+          "O4",
+          "O6"
+        ]
+      },
+      "notReasons": {
+        "bulk": [
+          "R4"
+        ]
+      }
+    }
+  ]
+}

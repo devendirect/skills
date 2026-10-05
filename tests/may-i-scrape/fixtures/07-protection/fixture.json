@@ -1,0 +1,20 @@
+{
+  "root": "site",
+  "host": "https://guarded.example",
+  "routes": {
+    "/": {
+      "status": 403,
+      "headers": {
+        "cf-mitigated": "challenge",
+        "server": "cloudflare"
+      },
+      "file": "challenge.html"
+    },
+    "/members/": {
+      "status": 302,
+      "headers": {
+        "location": "/login/"
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "note": "Dates when something must be re-checked (a decision announced, a pending case, a periodic review). check-watch.mjs lists the items whose date has passed; in CI it opens one GitHub issue per item. When an item is handled: update the legal files, then move its date forward or delete it.",
+  "items": [
+    {
+      "id": "bgh-laion",
+      "due": "2026-12-18",
+      "title": "BGH judgment in LAION (I ZR 281/25), announced for 2026-12-17",
+      "what": "Read the BGH press release and the judgment: is a natural-language TDM reservation in terms of use 'machine-readable' (§ 44b(3) UrhG)? Does § 60d cover the dataset?",
+      "where": ["https://www.bundesgerichtshof.de/SharedDocs/Termine/DE/Termine/IZR281-25.html"],
+      "files": ["references/legal-de.md § 2", "references/legal-eu.md § 3", "references/decision-table.md (R4)"]
+    },
+    {
+      "id": "ross-third-circuit",
+      "due": "2026-10-31",
+      "title": "Thomson Reuters v. Ross, Third Circuit (No. 25-2153, 2026-09-30): read the disposition",
+      "what": "The opinion was only partly read: confirm whether the district court was affirmed on copyrightability and fair use.",
+      "where": ["https://www2.ca3.uscourts.gov/opinarch/252153p.pdf"],
+      "files": ["references/legal-us.md § 3"]
+    },
+    {
+      "id": "bartz-final-approval",
+      "due": "2026-11-02",
+      "title": "Bartz v. Anthropic: final approval of the class settlement?",
+      "what": "Check the docket for the final approval order after the preliminary approval of 2025-10-17.",
+      "where": ["https://www.govinfo.gov/app/details/USCOURTS-cand-3_24-cv-05417"],
+      "files": ["references/legal-us.md § 3"]
+    },
+    {
+      "id": "cjeu-c-250-25",
+      "due": "2027-01-04",
+      "title": "CJEU C-250/25 Like Company v Google: Advocate General opinion or judgment?",
+      "what": "Check whether an AG opinion (CELEX 62025CC0250) or a judgment (62025CJ0250) has been published; question 3 is about Article 4 of Directive 2019/790 and LLM training.",
+      "where": ["http://publications.europa.eu/resource/celex/62025CC0250", "http://publications.europa.eu/resource/celex/62025CJ0250"],
+      "files": ["references/legal-eu.md § 3"]
+    },
+    {
+      "id": "ietf-aipref",
+      "due": "2027-01-04",
+      "title": "IETF aipref: has a vocabulary or attachment RFC been published?",
+      "what": "A published RFC (robots.txt extension or header for AI usage preferences) would need code in check-robots.mjs or check-page.mjs and a new signal.",
+      "where": ["https://datatracker.ietf.org/wg/aipref/about/"],
+      "files": ["references/sources.md", "scripts/"]
+    },
+    {
+      "id": "quarterly-legal-review",
+      "due": "2027-01-04",
+      "title": "Quarterly legal review (EU, FR, DE, UK, US)",
+      "what": "Re-read every source in sources.md marked by hand (Légifrance, leginfo), look for new laws, decisions and guidance (CNIL, ICO, EDPB, Copyright Office, UK government), update the 'Last checked' dates, release a patch version with a 'Legal update' CHANGELOG entry. Then move this date three months forward.",
+      "where": ["references/sources.md"],
+      "files": ["references/legal-*.md", "SKILL.md", "CHANGELOG.md"]
+    }
+  ]
+}

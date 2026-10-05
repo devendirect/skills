@@ -1,0 +1,12 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://shop.example/.well-known/api-catalog",
+      "item": [
+        {
+          "href": "https://api.shop.example/v1"
+        }
+      ]
+    }
+  ]
+}

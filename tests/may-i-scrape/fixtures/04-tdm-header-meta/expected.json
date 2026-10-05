@@ -1,0 +1,51 @@
+{
+  "checks": [
+    {
+      "path": "/free.html",
+      "options": {
+        "purpose": "ai-tdm"
+      },
+      "notReasons": {
+        "ai-tdm": [
+          "R2"
+        ]
+      },
+      "signals": {
+        "tdm.reserved": false,
+        "tdm.source": "header"
+      }
+    },
+    {
+      "path": "/meta.html",
+      "options": {
+        "purpose": "ai-tdm"
+      },
+      "verdicts": {
+        "ai-tdm": "red"
+      },
+      "reasons": {
+        "ai-tdm": [
+          "R2"
+        ]
+      },
+      "signals": {
+        "tdm.reserved": true,
+        "tdm.source": "meta"
+      }
+    },
+    {
+      "path": "/bad.html",
+      "options": {
+        "purpose": "ai-tdm"
+      },
+      "verdicts": {
+        "ai-tdm": "red"
+      },
+      "signals": {
+        "tdm.reserved": true,
+        "tdm.source": "file",
+        "tdm.header.reservation": null
+      }
+    }
+  ]
+}

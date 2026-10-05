@@ -1,0 +1,40 @@
+{
+  "checks": [
+    {
+      "path": "/",
+      "clauses": 0,
+      "verdicts": {
+        "lookup": "green",
+        "monitor": "orange",
+        "bulk": "orange",
+        "ai-tdm": "orange",
+        "republish": "orange"
+      },
+      "positives": {
+        "lookup": [
+          "G4"
+        ]
+      },
+      "notReasons": {
+        "lookup": [
+          "O6",
+          "O7"
+        ],
+        "monitor": [
+          "O6"
+        ]
+      },
+      "reasons": {
+        "monitor": [
+          "O7"
+        ],
+        "bulk": [
+          "O4"
+        ]
+      },
+      "signals": {
+        "terms.read": true
+      }
+    }
+  ]
+}

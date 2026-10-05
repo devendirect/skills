@@ -1,0 +1,26 @@
+{
+  "note": "Trigger eval set for the description of may-i-scrape: does Claude consult the skill for this request? should_trigger true = someone is about to collect data from a site they do not own (scraper, crawler, extraction, monitoring, dataset), with or without a legal question. false = near misses: site owners, official APIs, data already downloaded, parsing pasted HTML, general legal questions. Written 2026-10-05, to be reviewed by the user before any run.",
+  "queries": [
+    { "query": "j'ai besoin de récupérer tous les prix des annonces de voitures sur lacentrale.fr pour mon étude de marché, tu peux me faire un script python avec requests et beautifulsoup ?", "should_trigger": true },
+    { "query": "write me a playwright script that logs every new job posting on https://www.welcometothejungle.com/fr/companies/doctolib/jobs once a day and pushes it to a slack channel", "should_trigger": true },
+    { "query": "Est-ce que j'ai le droit d'aspirer les fiches restaurants de tripadvisor pour alimenter mon appli de recommandations ?", "should_trigger": true },
+    { "query": "we're building a dataset to fine-tune a small model on french legal Q&A, planning to crawl service-public.fr and legifrance. anything I should check before starting the crawler?", "should_trigger": true },
+    { "query": "my client wants the full product catalog of their competitor's shopify store (https://exemple-concurrent.myshopify.com) in a CSV, about 3000 products. best approach?", "should_trigger": true },
+    { "query": "Je voudrais extraire la liste des membres (nom, ville, email) de l'annuaire en ligne de l'ordre des architectes pour une campagne d'emailing", "should_trigger": true },
+    { "query": "can i use scrapy to pull all the reviews from trustpilot for my company and our 5 competitors and show them on our website?", "should_trigger": true },
+    { "query": "pour mon projet de fin d'études je veux collecter 50 000 articles du monde.fr et du figaro pour entraîner un classifieur de sentiment, comment je m'y prends ?", "should_trigger": true },
+    { "query": "hacker news has an api but i'd rather parse the html of news.ycombinator.com every 10 min to track rankings, can you write that in node", "should_trigger": true },
+    { "query": "le site de la mairie publie les horaires des déchetteries seulement en html, je veux les republier dans mon appli citoyenne, tu peux m'aider à les récupérer automatiquement ?", "should_trigger": true },
+
+    { "query": "fais un audit SEO de mon site https://www.monentreprise.fr, je veux savoir pourquoi google n'indexe pas mes pages produits", "should_trigger": false },
+    { "query": "my robots.txt blocks GPTBot but I'd like Perplexity to still cite my blog posts, what should I change in it?", "should_trigger": false },
+    { "query": "j'ai un fichier export.csv de notre CRM avec 12000 contacts, peux-tu dédoublonner par email et normaliser les numéros de téléphone ?", "should_trigger": false },
+    { "query": "my fetch() call to https://api.github.com/repos/vercel/next.js/issues returns 403 rate limit exceeded, how do I authenticate properly with a token?", "should_trigger": false },
+    { "query": "write a jest test for my express route that parses the HTML returned by our own internal admin page at /admin/stats", "should_trigger": false },
+    { "query": "Comment configurer Cloudflare pour bloquer les bots qui aspirent mon site e-commerce sans bloquer Googlebot ?", "should_trigger": false },
+    { "query": "use puppeteer to take screenshots of our staging site https://staging.myapp.dev on mobile and desktop for tomorrow's design review", "should_trigger": false },
+    { "query": "I downloaded the 'base adresse nationale' dataset from data.gouv.fr as CSV, help me load it into postgres with postgis", "should_trigger": false },
+    { "query": "explique-moi la différence entre RGPD et ePrivacy pour les cookies de mesure d'audience sur mon site vitrine", "should_trigger": false },
+    { "query": "parse this HTML I pasted and give me every href as a list: <ul><li><a href='/docs'>Docs</a></li><li><a href='/blog'>Blog</a></li></ul>", "should_trigger": false }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "checks": [
+    {
+      "path": "/imperva.html",
+      "options": {
+        "purpose": "bulk"
+      },
+      "verdicts": {
+        "bulk": "orange"
+      },
+      "reasons": {
+        "bulk": [
+          "O2"
+        ]
+      },
+      "signals": {
+        "page.protection.0.kind": "challenge",
+        "page.protection.0.evidence": "Imperva / Incapsula challenge page"
+      }
+    },
+    {
+      "path": "/baleen.html",
+      "options": {
+        "purpose": "monitor"
+      },
+      "reasons": {
+        "monitor": [
+          "O2"
+        ]
+      },
+      "signals": {
+        "page.protection.0.evidence": "near-empty page mentioning a challenge"
+      }
+    }
+  ]
+}

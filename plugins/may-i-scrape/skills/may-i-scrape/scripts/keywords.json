@@ -1,0 +1,26 @@
+{
+  "note": "Keep in sync with references/keywords.md. Patterns are case-insensitive regular expressions, matched on the visible text of each paragraph of the terms of use.",
+  "terms_links_note": "'text' must match the WHOLE link text (lowercased, spaces collapsed), 'slug' a WHOLE segment of the link's path (extension removed). Loose matching picked news articles and glossaries on real sites.",
+  "terms_links": [
+    { "score": 4,
+      "text": "^((github|our|the) )?acceptable use( polic(y|ies))?$",
+      "slug": "(^|-)acceptable-use(-polic(y|ies))?(-|$)" },
+    { "score": 3,
+      "text": "^(conditions? g[ée]n[ée]rales? d.utilisation|cgu|cgu ?(&|et|/) ?cgv|conditions? d.utilisation( et de vente)?|modalit[ée]s d.utilisation|terms of use|terms of service|terms (and|&) conditions of use|acceptable use( polic(y|ies))?|user agreement)$",
+      "slug": "(^|-)(cgu|cgu-cgv|conditions-generales-d-utilisation|conditions-d-utilisation|modalites-d-utilisation|terms-of-use|terms-of-service|tos|terms-and-conditions-of-use|acceptable-use(-polic(y|ies))?|user-agreement)(-|$)" },
+    { "score": 2,
+      "text": "^(conditions? g[ée]n[ée]rales?( de vente)?|cgv|terms (and|&) conditions|terms|conditions)$",
+      "slug": "^(cgv|conditions-generales(-de-vente)?|terms(-and-conditions|-conditions)?|conditions)$" },
+    { "score": 1,
+      "text": "^(mentions l[ée]gales|informations l[ée]gales|legal notice|legal information|legal|imprint|impressum)$",
+      "slug": "^(mentions-legales|informations-legales|legal-notice|legal|imprint|impressum)$" }
+  ],
+  "clauses": [
+    { "category": "scraping", "pattern": "scrap(e|er|ing|ping)|aspir(er|ation|ateur)|crawl(er|ing)?|spider|moissonn|harvest(ing)?|web ?harvest" },
+    { "category": "robots", "pattern": "\\brobots?\\b|\\bbots?\\b|\\bautomated\\b|automatis[ée]e?s?\\b|moyens? automatiques?|automatic means|programme informatique|logiciel d.extraction|\\bscripts?\\b" },
+    { "category": "extraction", "pattern": "extraction|extraire|extract(ing|ion)?|copie syst[ée]matique|systematic(ally)? (copy|download|retriev)|t[ée]l[ée]chargement (massif|syst[ée]matique)|bulk download" },
+    { "category": "database", "pattern": "base de donn[ée]es|database|partie substantielle|substantial part|sui generis|producteur de bases" },
+    { "category": "mining", "pattern": "fouille de (textes? et de )?donn[ée]es|text and data mining|\\btdm\\b|data ?mining|intelligence artificielle|artificial intelligence|machine learning|entra[iî]nement|entra[iî]ner (un |une |des |les? |l.)?(mod[èe]les?|algorithmes?|ia\\b|intelligence)|train(ing)? (of |an? )?(ai|model|algorithm)|mod[èe]les? d.ia" },
+    { "category": "reuse", "pattern": "r[ée]utilis(er|ation)|reproduc(e|tion)|reproduire|republi|redistribu|revend|resell|commercial use|usage commercial|exploitation commerciale" }
+  ]
+}

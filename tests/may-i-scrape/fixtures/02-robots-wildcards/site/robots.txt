@@ -1,0 +1,8 @@
+# Traps for parsers that take the first match or ignore wildcards.
+User-agent: *
+Disallow: /data
+Allow: /data/open/
+Disallow: /*.php$
+Allow: /public/*.php$
+Crawl-delay: 5
+Sitemap: https://wild.example/sitemap.xml

@@ -1,0 +1,35 @@
+{
+  "checks": [
+    {
+      "path": "/",
+      "verdicts": {
+        "ai-tdm": "red",
+        "lookup": "orange"
+      },
+      "reasons": {
+        "ai-tdm": [
+          "R3"
+        ],
+        "bulk": [
+          "O3"
+        ]
+      },
+      "notReasons": {
+        "lookup": [
+          "R1",
+          "O3"
+        ],
+        "ai-tdm": [
+          "R1",
+          "R2"
+        ]
+      },
+      "signals": {
+        "robots.ai_training_blocked": [
+          "GPTBot",
+          "CCBot"
+        ]
+      }
+    }
+  ]
+}

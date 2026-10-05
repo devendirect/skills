@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "path": "/catalogue/p.html",
+      "options": {
+        "purpose": "lookup",
+        "agent": "mybot"
+      },
+      "verdicts": {
+        "lookup": "red"
+      },
+      "reasons": {
+        "lookup": [
+          "R1",
+          "O8"
+        ]
+      },
+      "notRequested": [
+        "/catalogue/",
+        "/.well-known/"
+      ]
+    },
+    {
+      "path": "/catalogue/p.html",
+      "options": {
+        "purpose": "lookup"
+      },
+      "verdicts": {
+        "lookup": "orange"
+      },
+      "reasons": {
+        "lookup": [
+          "O8"
+        ]
+      },
+      "notReasons": {
+        "lookup": [
+          "R1"
+        ]
+      },
+      "notRequested": [
+        "/catalogue/"
+      ],
+      "signals": {
+        "page.read": false
+      }
+    }
+  ]
+}

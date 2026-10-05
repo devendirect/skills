@@ -1,0 +1,11 @@
+{
+  "root": "site",
+  "host": "https://shop.example",
+  "routes": {
+    "/.well-known/api-catalog": {
+      "headers": {
+        "content-type": "application/linkset+json"
+      }
+    }
+  }
+}

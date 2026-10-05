@@ -1,0 +1,51 @@
+{
+  "checks": [
+    {
+      "path": "/",
+      "options": {
+        "purpose": "lookup"
+      },
+      "verdicts": {
+        "lookup": "orange"
+      },
+      "reasons": {
+        "lookup": [
+          "O2"
+        ]
+      },
+      "notReasons": {
+        "lookup": [
+          "O8"
+        ]
+      }
+    },
+    {
+      "path": "/members/",
+      "options": {
+        "purpose": "monitor"
+      },
+      "reasons": {
+        "monitor": [
+          "O2"
+        ]
+      },
+      "signals": {
+        "page.protection.0.kind": "login"
+      }
+    },
+    {
+      "path": "/article.html",
+      "options": {
+        "purpose": "republish"
+      },
+      "reasons": {
+        "republish": [
+          "O2"
+        ]
+      },
+      "signals": {
+        "page.protection.0.kind": "paywall"
+      }
+    }
+  ]
+}

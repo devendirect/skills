@@ -1,0 +1,47 @@
+{
+  "checks": [
+    {
+      "path": "/profile.html",
+      "verdicts": {
+        "lookup": "orange"
+      },
+      "reasons": {
+        "lookup": [
+          "O1"
+        ],
+        "bulk": [
+          "O1"
+        ]
+      },
+      "signals": {
+        "personal_data.level": "likely"
+      }
+    },
+    {
+      "path": "/plain.html",
+      "notReasons": {
+        "lookup": [
+          "O1"
+        ]
+      },
+      "signals": {
+        "personal_data.level": "not detected"
+      }
+    },
+    {
+      "path": "/plain.html",
+      "options": {
+        "purpose": "lookup",
+        "personalData": "likely"
+      },
+      "reasons": {
+        "lookup": [
+          "O1"
+        ]
+      },
+      "signals": {
+        "personal_data.declared": true
+      }
+    }
+  ]
+}

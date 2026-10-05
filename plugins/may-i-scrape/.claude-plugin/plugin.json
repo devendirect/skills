@@ -1,0 +1,10 @@
+{
+  "name": "may-i-scrape",
+  "description": "Checks whether a website's data may be collected lawfully and politely for a given purpose (robots.txt, AI crawler rules, TDM reservations, open licences, public bodies, access protections, terms of use) and gives a green / orange / red verdict with the signals behind it. Never helps bypass a protection. Not legal advice.",
+  "version": "0.2.0",
+  "author": {
+    "name": "DevEnDirect"
+  },
+  "license": "MIT",
+  "keywords": ["scraping", "robots.txt", "tdmrep", "text-and-data-mining", "open-data", "compliance", "gdpr"]
+}

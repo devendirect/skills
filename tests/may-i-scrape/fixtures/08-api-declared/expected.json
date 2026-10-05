@@ -1,0 +1,26 @@
+{
+  "checks": [
+    {
+      "path": "/",
+      "options": {
+        "purpose": "bulk"
+      },
+      "verdicts": {
+        "bulk": "orange"
+      },
+      "reasons": {
+        "bulk": [
+          "O4",
+          "O7"
+        ]
+      },
+      "signals": {
+        "alternatives.api_catalog.items": [
+          "https://api.shop.example/v1"
+        ],
+        "alternatives.page_links.0.href": "https://shop.example/developers",
+        "alternatives.feeds.0.href": "https://shop.example/feed.xml"
+      }
+    }
+  ]
+}

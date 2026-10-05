@@ -1,0 +1,56 @@
+{
+  "checks": [
+    {
+      "path": "/private/list.html",
+      "options": {
+        "purpose": "lookup",
+        "offline": {
+          "robots": "pasted/robots.txt"
+        }
+      },
+      "noRequests": true,
+      "verdicts": {
+        "lookup": "red"
+      },
+      "reasons": {
+        "lookup": [
+          "R1",
+          "O6",
+          "O8"
+        ]
+      }
+    },
+    {
+      "path": "/page.html",
+      "options": {
+        "purpose": "ai-tdm",
+        "offline": {
+          "page": "pasted/page.html",
+          "headers": "pasted/headers.txt",
+          "terms": "pasted/terms.txt"
+        },
+        "classifyAll": {
+          "ai-tdm": "prohibited"
+        }
+      },
+      "noRequests": true,
+      "clauses": 1,
+      "verdicts": {
+        "ai-tdm": "red"
+      },
+      "reasons": {
+        "ai-tdm": [
+          "R2",
+          "R4",
+          "O9"
+        ]
+      },
+      "signals": {
+        "robots.state": "not provided",
+        "page.x_robots_tag": "noindex",
+        "tdm.source": "meta",
+        "terms.source": "pasted"
+      }
+    }
+  ]
+}
