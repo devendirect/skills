@@ -81,16 +81,23 @@ async function askClaude(question) {
   };
   const messages = [{ role: "user", content: question }];
   let content = [];
+  const usage = { input_tokens: 0, output_tokens: 0, web_searches: 0 };
   for (let turn = 0; turn < 4; turn++) {
     const r = await post(`${ANTHROPIC_API}/v1/messages`, headers, {
       model: process.env.CLAUDE_MODEL ?? "claude-opus-5-5",
-      max_tokens: 8000,
+      // Thinking is always on and counts toward max_tokens: leave room for it.
+      max_tokens: 16000,
       output_config: { effort: "low" },
       fallbacks: "default",
       tools: [{ type: "web_search_20260318", name: "web_search", max_uses: 3 }],
       messages,
     });
-    if (r.stop_reason === "refusal") return { refused: r.stop_details?.category ?? true, cited: [], sources: [], text: "" };
+    usage.input_tokens += r.usage?.input_tokens ?? 0;
+    usage.output_tokens += r.usage?.output_tokens ?? 0;
+    usage.web_searches += r.usage?.server_tool_use?.web_search_requests ?? 0;
+    if (r.stop_reason === "refusal") return { refused: r.stop_details?.category ?? true, cited: [], sources: [], text: "", usage };
+    // A cut-off answer may have lost its citations: report it, never count it as "not cited".
+    if (r.stop_reason === "max_tokens") throw new Error("answer cut off at max_tokens, not counted");
     content = content.concat(r.content ?? []);
     if (r.stop_reason !== "pause_turn") break;
     // Paused long search turn: send the assistant content back unchanged.
@@ -99,7 +106,7 @@ async function askClaude(question) {
   const cited = content.filter((b) => b.type === "text").flatMap((b) => (b.citations ?? []).filter((c) => c.url).map((c) => c.url));
   const sources = content.filter((b) => b.type === "web_search_tool_result" && Array.isArray(b.content)).flatMap((b) => b.content.map((x) => x.url).filter(Boolean));
   const text = content.filter((b) => b.type === "text").map((b) => b.text).join("");
-  return { cited, sources, text };
+  return { cited, sources, text, usage };
 }
 
 async function askOpenAI(question) {
@@ -113,7 +120,8 @@ async function askOpenAI(question) {
   const parts = out.filter((o) => o.type === "message").flatMap((o) => o.content ?? []);
   const cited = parts.flatMap((p) => (p.annotations ?? []).filter((a) => a.type === "url_citation" && a.url).map((a) => a.url));
   const sources = out.filter((o) => o.type === "web_search_call").flatMap((o) => (o.action?.sources ?? []).map((s) => s.url).filter(Boolean));
-  return { cited, sources, text: parts.map((p) => p.text ?? "").join("") };
+  const usage = { input_tokens: r.usage?.input_tokens ?? 0, output_tokens: r.usage?.output_tokens ?? 0, web_searches: out.filter((o) => o.type === "web_search_call").length };
+  return { cited, sources, text: parts.map((p) => p.text ?? "").join(""), usage };
 }
 
 async function askPerplexity(question) {
@@ -126,7 +134,8 @@ async function askPerplexity(question) {
   const parts = out.filter((o) => o.type === "message").flatMap((o) => o.content ?? []);
   const cited = parts.flatMap((p) => (p.annotations ?? []).filter((a) => a.url).map((a) => a.url));
   const sources = out.filter((o) => o.type === "search_results").flatMap((o) => (o.results ?? []).map((x) => x.url).filter(Boolean));
-  return { cited, sources, text: parts.map((p) => p.text ?? "").join("") };
+  const usage = { input_tokens: r.usage?.input_tokens ?? 0, output_tokens: r.usage?.output_tokens ?? 0, web_searches: out.filter((o) => o.type === "search_results").length };
+  return { cited, sources, text: parts.map((p) => p.text ?? "").join(""), usage };
 }
 
 const ASK = { claude: askClaude, openai: askOpenAI, perplexity: askPerplexity };
@@ -152,6 +161,7 @@ for (const question of questions) {
           mentioned: new RegExp(domain.replace(/\./g, "\\."), "i").test(a.text),
           citedHosts,
           sourceCount: a.sources.length,
+          usage: a.usage ?? null,
         });
       } catch (e) {
         results.push({ question, engine, run, error: e.message });
@@ -178,7 +188,13 @@ const summary = questions.map((q) => ({
   }),
 }));
 
-const report = { checkedAt: new Date().toISOString(), domain, plan, skipped, summary, results };
+// What the run actually consumed, per engine (tokens and web searches as reported by each API).
+const usage = Object.fromEntries(engines.map((e) => [e, results.filter((r) => r.engine === e && r.usage).reduce(
+  (t, r) => ({ input_tokens: t.input_tokens + r.usage.input_tokens, output_tokens: t.output_tokens + r.usage.output_tokens, web_searches: t.web_searches + r.usage.web_searches }),
+  { input_tokens: 0, output_tokens: 0, web_searches: 0 },
+)]));
+
+const report = { checkedAt: new Date().toISOString(), domain, plan, skipped, usage, summary, results };
 if (json) {
   console.log(JSON.stringify(report, null, 2));
 } else {
@@ -193,5 +209,6 @@ if (json) {
     }
     console.log("");
   }
+  console.log(`Consumed: ${engines.map((e) => `${e} ${usage[e].input_tokens} in / ${usage[e].output_tokens} out tokens, ${usage[e].web_searches} searches`).join("; ")}.`);
   console.log("Answers vary between runs, accounts and locations: a sample, not a ranking.");
 }

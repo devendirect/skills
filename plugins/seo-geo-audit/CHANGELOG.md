@@ -1,5 +1,20 @@
 # Changelog — seo-geo-audit
 
+## 2.7.1 — 2026-10-04
+
+From a `/claude-api prompt-audit` of the skill (target model: Claude Opus 5.5).
+
+### Fixed
+
+- `ai-mentions.mjs`: an answer cut off at `max_tokens` was counted as "answered, site not cited". It is now reported as an error, and `max_tokens` is raised from 8,000 to 16,000 (thinking is always on and counts toward it).
+- `SKILL.md`: the plans table said "Always" for three plans while the scope options narrow them; plans are now written only when the scope includes them.
+- `SKILL.md`: block ordering is defined once, in `references/output-format.md` (impact first, then effort), instead of a second, different wording.
+- `SKILL.md`: "Absolute rules" heading renamed "Rules".
+
+### Added
+
+- `ai-mentions.mjs` reports what a run consumed, per engine: input and output tokens, web searches (summed over `pause_turn` continuations). Tests cover both changes.
+
 ## 2.7.0 — 2026-10-03
 
 ### Added

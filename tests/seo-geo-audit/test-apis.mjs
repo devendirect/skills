@@ -88,14 +88,15 @@ const server = http.createServer(async (req, res) => {
     if (req.headers["x-api-key"] !== "test-anthropic") return send(res, 401, { error: { message: "invalid x-api-key" } });
     const q = b.messages[0].content;
     if (/refuse/.test(q)) return send(res, 200, { stop_reason: "refusal", stop_details: { type: "refusal", category: "cyber" }, content: [] });
-    if (b.messages.length === 1) return send(res, 200, { stop_reason: "pause_turn", content: [
+    if (/truncate/.test(q)) return send(res, 200, { stop_reason: "max_tokens", content: [{ type: "text", text: "Two workshops offer" }], usage: { input_tokens: 900, output_tokens: 16000 } });
+    if (b.messages.length === 1) return send(res, 200, { stop_reason: "pause_turn", usage: { input_tokens: 1200, output_tokens: 80, server_tool_use: { web_search_requests: 1 } }, content: [
       { type: "server_tool_use", id: "srvtoolu_1", name: "web_search", input: { query: q } },
       { type: "web_search_tool_result", tool_use_id: "srvtoolu_1", content: [
         { type: "web_search_result", url: "https://www.atelier.example/cours/", title: "Cours", encrypted_content: "x" },
         { type: "web_search_result", url: "https://rival.example/stages", title: "Stages", encrypted_content: "y" },
       ] },
     ] });
-    return send(res, 200, { stop_reason: "end_turn", content: [
+    return send(res, 200, { stop_reason: "end_turn", usage: { input_tokens: 3000, output_tokens: 400, server_tool_use: { web_search_requests: 1 } }, content: [
       { type: "text", text: "Two workshops offer this: " },
       { type: "text", text: "Rival runs weekend courses.", citations: [{ type: "web_search_result_location", url: "https://rival.example/stages", title: "Stages", cited_text: "…" }] },
     ] });
@@ -203,7 +204,8 @@ await test("with --yes: citations, sources, pause_turn, errors", ["ai-mentions.m
     ...has(by.claude?.cited === 0 && by.claude?.inSourcesOnly === 1, "claude: read but not cited"),
     ...has(by.claude?.topCitedDomains?.[0]?.host === "rival.example", "claude: cites rival instead"),
     ...has(seen.claude.length === 2 && c.body?.messages?.length === 2 && c.body.messages[1].role === "assistant", "pause_turn: assistant content sent back"),
-    ...has(c.body?.model === "claude-opus-5-5" && c.body?.tools?.[0]?.type === "web_search_20260318" && c.body?.fallbacks === "default", "claude request body"),
+    ...has(c.body?.model === "claude-opus-5-5" && c.body?.tools?.[0]?.type === "web_search_20260318" && c.body?.fallbacks === "default" && c.body?.max_tokens === 16000, "claude request body"),
+    ...has(r.usage?.claude?.input_tokens === 4200 && r.usage?.claude?.output_tokens === 480 && r.usage?.claude?.web_searches === 2, `claude usage summed over pause_turn: ${JSON.stringify(r.usage?.claude)}`),
     ...has(c.headers?.version === "2023-06-01" && c.headers?.beta === "server-side-fallback-2026-07-01", "claude headers"),
     ...has(by.openai?.cited === 1, "openai: cited"),
     ...has(seen.openai[0]?.include?.[0] === "web_search_call.action.sources" && seen.openai[0]?.model === "test-model", "openai request"),
@@ -213,6 +215,11 @@ await test("with --yes: citations, sources, pause_turn, errors", ["ai-mentions.m
 await test("refusal recorded", ["ai-mentions.mjs", "--domain", "atelier.example", "--question", "please refuse", "--engines", "claude", "--json", "--yes"], AI_KEYS, ({ out, code }) => {
   const r = code === 0 ? JSON.parse(out) : { summary: [] };
   return [...has(r.summary[0]?.engines?.[0]?.refused === 1, "refused count")];
+});
+await test("cut-off answer reported, not counted as not cited", ["ai-mentions.mjs", "--domain", "atelier.example", "--question", "please truncate", "--engines", "claude", "--json", "--yes"], AI_KEYS, ({ out, code }) => {
+  const r = code === 0 ? JSON.parse(out) : { summary: [] };
+  const e = r.summary[0]?.engines?.[0] ?? {};
+  return [...has(e.answered === 0 && /cut off/.test(e.errors?.[0] ?? ""), `answered ${e.answered}, errors ${JSON.stringify(e.errors)}`)];
 });
 await test("no key at all", ["ai-mentions.mjs", "--domain", "atelier.example", "--question", "q", "--yes"], {}, ({ code, err }) => [
   ...has(code === 4 && /ANTHROPIC_API_KEY/.test(err), `exit ${code}`),

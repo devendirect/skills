@@ -9,7 +9,7 @@ Goal: deliver Markdown action plans (checkboxes) tailored to the audited project
 
 Facts in this skill and its references were last checked on **2026-10-03**. Search engines, AI crawlers and consent rules change often: anything marked *(verify)* must be re-checked at its source before it goes into a plan.
 
-## Absolute rules
+## Rules
 
 1. **Do not implement anything during this skill.** Plans first; the user then picks which block to build.
 2. **`[x]` means "in place and verified"**: file present, HTTP status observed, header read, commit identified. Write the proof in italics next to it. Never tick what you assume, and never tick an observed problem: problems go in the block's **Finding** line, their fixes in unticked actions.
@@ -92,9 +92,9 @@ The scripts send a few sequential requests with a pause and identify themselves.
 
 ## Phase 3 — Write the plans (one .md file per theme)
 
-Every plan follows the fixed format in [`references/output-format.md`](references/output-format.md): header (date, scope, legend), blocks rated **impact H/M/L** and **effort S/M/L** and ordered by return for the effort, checkboxes, **code** actions separated from **manual** actions (external consoles). Tick upfront what the audit showed as already done, with the proof in italics.
+Every plan follows the fixed format in [`references/output-format.md`](references/output-format.md): header (date, scope, legend), blocks rated **impact H/M/L** and **effort S/M/L** and ordered as that file says, checkboxes, **code** actions separated from **manual** actions (external consoles). Tick upfront what the audit showed as already done, with the proof in italics.
 
-Only write the plans that apply. Default themes, each with its reference:
+Only write the plans that apply and that the scope includes (see Scope and mode). Default themes, each with its reference:
 
 | Plan | When | Reference |
 | --- | --- | --- |
