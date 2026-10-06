@@ -1,6 +1,6 @@
 ---
 name: seo-geo-audit
-description: "Audits a web project (technical SEO, structured data, visibility in AI assistants / GEO, programmatic SEO, analytics and consent, IndexNow) and writes Markdown action plans with checkboxes, tailored to the project. Use when the user asks for an SEO audit, better visibility in AI chats (llms.txt, GEO, being cited by ChatGPT / Perplexity / Claude / Gemini), programmatic SEO pages, an analytics plan, or IndexNow. Also in French: « audit SEO », « référencement », « visibilité IA », « être cité par ChatGPT / les IA », « GEO », « plan analytics », « mesure d'audience ». This skill WRITES PLANS, it does not implement them; implementation comes afterwards, one block at a time, on request."
+description: "Audits a web project (technical SEO, structured data, visibility in AI assistants / GEO, programmatic SEO, analytics and consent, IndexNow) and writes Markdown action plans with checkboxes, tailored to the project. Use when the user asks, in any language, for an SEO (référencement) audit, better visibility in AI assistants (GEO, llms.txt, being cited by ChatGPT / Perplexity / Claude / Gemini), programmatic SEO pages, an analytics or audience-measurement plan, or IndexNow. This skill WRITES PLANS, it does not implement them; implementation comes afterwards, one block at a time, on request."
 ---
 
 # SEO / GEO / analytics audit

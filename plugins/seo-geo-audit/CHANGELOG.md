@@ -1,5 +1,11 @@
 # Changelog — seo-geo-audit
 
+## 2.7.2 — 2026-10-06
+
+### Changed
+
+- Description: the list of French trigger phrases is replaced by "in any language" (689 → 595 characters, loaded in every session). Measured before the change: the 5 French should-trigger test queries triggered the skill 10/10 with both descriptions, and 10 near-miss queries never triggered it.
+
 ## 2.7.1 — 2026-10-04
 
 From a `/claude-api prompt-audit` of the skill (target model: Claude Opus 5.5).

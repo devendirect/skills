@@ -6,7 +6,7 @@ A plugin marketplace (`.claude-plugin/marketplace.json`, name `devendirect`) wit
 
 | Plugin | State | Start here |
 | --- | --- | --- |
-| `seo-geo-audit` | v2.7.1, working, tested | `plugins/seo-geo-audit/README.md`, `CHANGELOG.md`, `notes/seo-geo-audit/TODO.md`; prompt audit done (2.7.1); next: trigger eval of the description (`skill-creator`, or a copy of `tests/may-i-scrape/run-trigger-evals.mjs` on Windows) |
+| `seo-geo-audit` | v2.7.2, working, tested | `plugins/seo-geo-audit/README.md`, `CHANGELOG.md`, `notes/seo-geo-audit/TODO.md`; prompt audit done (2.7.1); next: trigger eval of the description (`skill-creator`, or a copy of `tests/may-i-scrape/run-trigger-evals.mjs` on Windows) |
 | `may-i-scrape` | v0.2.0, phases 0–3 done: signals, terms of use classified by the model, sourced legal framework (EU, FR, DE, UK, US), offline mode; tested on 53 real sites, 10 headless scenarios, trigger eval 20/20 | `plugins/may-i-scrape/README.md`, `CHANGELOG.md`, `notes/may-i-scrape/TODO.md`. Next: keep-up-to-date work (text fingerprints, Légifrance, law watch) before 2027-01-04, then publication |
 
 ## Rules

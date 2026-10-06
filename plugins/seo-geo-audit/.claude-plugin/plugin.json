@@ -1,7 +1,7 @@
 {
   "name": "seo-geo-audit",
   "description": "Audits a web project (technical SEO, structured data, visibility in AI assistants, analytics and consent, IndexNow, programmatic SEO) and writes Markdown action plans with checkboxes. It plans, it does not implement.",
-  "version": "2.7.1",
+  "version": "2.7.2",
   "author": {
     "name": "DevEnDirect"
   },
