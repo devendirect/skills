@@ -11,9 +11,9 @@
     },
     {
       "id": "bartz-final-approval",
-      "due": "2026-11-02",
+      "due": "2027-01-04",
       "title": "Bartz v. Anthropic: final approval of the class settlement?",
-      "what": "Check the docket for the final approval order after the preliminary approval of 2025-10-17.",
+      "what": "Check the docket for the final approval order after the preliminary approval of 2025-10-17. Checked 2026-11-09 without result: govinfo has nothing after 2025-10-17, the court site has no page for the case; the full docket is on PACER (No. 3:24-cv-05417-WHA).",
       "where": ["https://www.govinfo.gov/app/details/USCOURTS-cand-3_24-cv-05417"],
       "files": ["references/legal-us.md § 3"]
     },
