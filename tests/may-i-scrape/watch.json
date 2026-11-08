@@ -10,14 +10,6 @@
       "files": ["references/legal-de.md § 2", "references/legal-eu.md § 3", "references/decision-table.md (R4)"]
     },
     {
-      "id": "ross-third-circuit",
-      "due": "2026-10-31",
-      "title": "Thomson Reuters v. Ross, Third Circuit (No. 25-2153, 2026-09-30): read the disposition",
-      "what": "The opinion was only partly read: confirm whether the district court was affirmed on copyrightability and fair use.",
-      "where": ["https://www2.ca3.uscourts.gov/opinarch/252153p.pdf"],
-      "files": ["references/legal-us.md § 3"]
-    },
-    {
       "id": "bartz-final-approval",
       "due": "2026-11-02",
       "title": "Bartz v. Anthropic: final approval of the class settlement?",

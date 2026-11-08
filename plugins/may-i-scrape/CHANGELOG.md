@@ -1,5 +1,11 @@
 # Changelog — may-i-scrape
 
+## Unreleased
+
+### Changed
+
+- `references/legal-us.md` § 3: the Third Circuit opinion in Thomson Reuters v. Ross (No. 25-2153) read in full: the district court is affirmed (headnotes copyrightable, Ross's use not fair; factors 1, 3 and 4 against fair use, factor 2 slightly for it). The opinion was filed on 2026-09-29, not 2026-09-30 as written in 0.2.0.
+
 ## 0.2.0 — 2026-10-04
 
 Terms of use and a sourced legal framework. Green verdicts are now possible.
